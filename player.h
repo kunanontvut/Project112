@@ -7,4 +7,4 @@ class player{
         player(string);
         ~player();
 
-}
+};

@@ -1,3 +1,6 @@
+#include <iostream>
+#include "player.h"
+using namespace std;
 
 void player::incread_score(){
     score+=1;
