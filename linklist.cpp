@@ -49,3 +49,5 @@ void LL::dropcard(monster_node*& x,int n){
     tnext->delete_monsterin_hand(pre);
     
 }
+
+void :: LL

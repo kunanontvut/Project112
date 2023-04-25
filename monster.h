@@ -7,7 +7,7 @@ class monster_node {
     monster_node* next;
     
     public :
-        monster_node(string,string,string);
+        monster_node(string,string);
         void insert_monster(monster_node*&);
         void show_monster();
         void delete_monsterin_hand(monster_node*&);

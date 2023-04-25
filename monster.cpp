@@ -3,11 +3,13 @@
 #include "monster.h"
 using namespace std;
 
-monster_node::monster_node(string mn,string el,string typ){
-    monsname =  mn;
+monster_node::monster_node(string el,string typ){
     element = el;
     type = typ;
     next = NULL;
+
+    
+
     cout<<"Momster "<<monsname<<"add in your hand.."<<endl;
 }
 
