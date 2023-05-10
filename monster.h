@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 
 class monster_node {
     private :
