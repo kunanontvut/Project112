@@ -12,4 +12,11 @@ class player{
         void changename(){
             name = "Computer";
         }
+        string returnname(){
+            return name;
+        }
+
+        int returnscore(){
+            return score;
+        }
 };

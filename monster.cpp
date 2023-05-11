@@ -8,7 +8,7 @@ monster_node::monster_node(string el,string typ){
     type = typ;
     next = NULL;
 
-    if(el == "Avest"){
+    if(el == "Aves"){
         if(type == "Wind"){
             monsname = "Ambiente";
         }
@@ -106,7 +106,7 @@ void monster_node::insert_monster(monster_node*& x){
 }
 
 void monster_node::show_monster(){
-    cout<<monsname<<" [ "<<type<<" ]"<<"[ "<<element<<" ]"<<endl;
+    cout<<monsname<<" [ "<<type<<" ]"<<"[ "<<element<<" ]";
 }
 
 monster_node* monster_node::movenext(){

@@ -8,6 +8,7 @@ void player::incread_score(){
 
 player::player(string ename){
     name = ename;
+    score =0;
 }
 
 player::~player(){

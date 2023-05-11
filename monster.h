@@ -13,6 +13,10 @@ class monster_node {
         void insert_monster(monster_node*&);
         void show_monster();
         void delete_monsterin_hand(monster_node*&);
+
         monster_node* movenext();
         ~monster_node();
+
+        string returnele(){return element; }
+        string returntype(){return type; }
 };

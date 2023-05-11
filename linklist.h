@@ -7,8 +7,10 @@ class LL :public player{
 public:
        void add_monster(monster_node*&);
        void show_allmonster();
-       void dropcard(monster_node*&,int);
-    
+       void dropcard(int);
+       void winlosecal(LL&,int,LL&,int);
+       int returnsize(){ return size;}
+       
        ~LL();
        LL(string);
 

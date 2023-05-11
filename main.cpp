@@ -9,7 +9,7 @@ void clearscr();
 
 int main(){
     LL P1("Player 1"),P2("Player 2");
-    int mode,i,mt,me,pp;
+    int mode,i,mt,me,pp1,pp2;
     string mtn,men;
     monster_node *t;
 
@@ -30,14 +30,16 @@ int main(){
         P2.changename();
     }
 
-    cout<<"Player 1 choose your 7 monster"<<endl;
+    cout<<P1.returnname()<<" choose your 7 monster"<<endl;
     selectmonster();
     for(i=0;i<7;i++){
         do{
+        mt=0;
+        me=0;
         cin>>mt>>me;
         }while(mt < 1 || mt > 5 || me < 1 || me > 5);
 
-        if(mt == 1) mtn = "Avest";
+        if(mt == 1) mtn = "Aves";
         else if(mt == 2) mtn = "Reptilia";
         else if(mt == 3) mtn = "Aquatic";
         else if(mt == 4) mtn = "Primitive";
@@ -56,14 +58,16 @@ int main(){
         clearscr();
 
     if(mode == 1){
-        cout<<"Player 2 choose your 7 monster"<<endl;
+        cout<<P2.returnname()<<" choose your 7 monster"<<endl;
         selectmonster();
     for(i=0;i<7;i++){
         do{
+        mt=0;
+        me=0;
         cin>>mt>>me;
         }while(mt < 1 || mt > 5 || me < 1 || me > 5);
 
-        if(mt == 1) mtn = "Avest";
+        if(mt == 1) mtn = "Aves";
         else if(mt == 2) mtn = "Reptilia";
         else if(mt == 3) mtn = "Aquatic";
         else if(mt == 4) mtn = "Primitive";
@@ -84,7 +88,7 @@ int main(){
 
             mt = rand()%5+1;
             me = rand()%5+1;
-        if(mt == 1) mtn = "Avest";
+        if(mt == 1) mtn = "Aves";
         else if(mt == 2) mtn = "Reptilia";
         else if(mt == 3) mtn = "Aquatic";
         else if(mt == 4) mtn = "Primitive";
@@ -100,18 +104,32 @@ int main(){
         P2.add_monster(t);
     }
     }
-
-    clearscr();
-
-    cout<<"!! Battle face !!"<<endl;
-    cout<<"Turn P1 pick"<<endl;
-    system("pause");
-    cout<<"Player 1 pick 1 monster to fight"<<endl;
-    P1.show_allmonster();
-
-
     
-
+    clearscr();
+    do{
+    cout<<"!! Battle face !!"<<endl;
+    cout<<"Turn "<<P1.returnname()<<" pick"<<endl;
+    system("pause");
+    cout<<P1.returnname()<<" 1 pick 1 monster to fight"<<endl;
+    P1.show_allmonster();
+    cout<<"?";
+    do{
+    pp1=0;
+    cin>>pp1;
+    }while(pp1<1 || pp1>P1.returnsize());
+    // sent card
+    clearscr();
+    cout<<"Turn "<<P2.returnname()<<" pick"<<endl;
+    system("pause");
+     cout<<P2.returnname()<<" 1 pick 1 monster to fight"<<endl;
+    P2.show_allmonster();
+    cout<<"?";
+    do{
+    cin>>pp2;
+    }while(pp2<1 || pp2>P2.returnsize());
+    // sent card
+    P1.winlosecal(P1,pp1-1,P2,pp2-1);
+    }while(P1.returnscore()!=3 ||P2.returnscore()!=3 || P1.returnsize() != 0);
 
 }
 
@@ -134,13 +152,13 @@ void pregame_display(){
 
 void selectmonster(){
     cout<<"---Monster Type---|---Element---"<<endl;
-    cout<<"1. Avest          |1. Wind"<<endl;
+    cout<<"1. Aves           |1. Wind"<<endl;
     cout<<"2. Reptilia       |2. Fire"<<endl;
     cout<<"3. Aquatic        |3. Plant"<<endl;
     cout<<"4. Primitive      |4. Water"<<endl;
     cout<<"5. Terrestial     |5. Earth"<<endl;
     cout<<"Choose your monstertype & element - (numbermontsterype numberelement)"<<endl;
-    cout<<"ex. your want Avest and Water input 1 4"<<endl;
+    cout<<"ex. your want Aves and Water input 1 4"<<endl;
 
 }
 
