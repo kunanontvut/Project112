@@ -3,22 +3,22 @@
 #include "monster.h"
 using namespace std;
 
-monster_node::monster_node(string el,string typ){
+monster_node::monster_node(string typ,string el){
     element = el;
     type = typ;
     next = NULL;
 
-    if(el == "Aves"){
-        if(type == "Wind"){
+    if(type == "Aves"){
+        if(element == "Wind"){
             monsname = "Ambiente";
         }
-        else if(type == "Fire"){
+        else if(element == "Fire"){
             monsname = "Phoenix";
         }
-        else if(type == "Plant"){
+        else if(element == "Plant"){
             monsname = "Em madeira";
         }
-        else if(type == "Water"){
+        else if(element == "Water"){
             monsname = "Maremoth";
         }
         else{
@@ -26,17 +26,17 @@ monster_node::monster_node(string el,string typ){
         }
     }
 
-    else if(el == "Aquatic"){
-        if(type == "Wind"){
+    else if(type == "Aquatic"){
+        if(element == "Wind"){
             monsname = "Rivotra";
         }
-        else if(type == "Fire"){
+        else if(element == "Fire"){
             monsname = "Vatra Voda";
         }
-        else if(type == "Plant"){
+        else if(element == "Plant"){
             monsname = "Acqua Albero";
         }
-        else if(type == "Water"){
+        else if(element == "Water"){
             monsname = "Aqua vandens";
         }
         else{
@@ -44,17 +44,17 @@ monster_node::monster_node(string el,string typ){
         }
     }
 
-    else if(el == "Reptilia"){
-        if(type == "Wind"){
+    else if(type == "Reptilia"){
+        if(element == "Wind"){
             monsname = "Atmosfera";
         }
-        else if(type == "Fire"){
+        else if(element == "Fire"){
             monsname = "Queima";
         }
-        else if(type == "Plant"){
+        else if(element == "Plant"){
             monsname = "Madeirgarto";
         }
-        else if(type == "Water"){
+        else if(element == "Water"){
             monsname = "Lagarto";
         }
         else{
@@ -62,17 +62,17 @@ monster_node::monster_node(string el,string typ){
         }
     }
 
-    else if(el == "Primitive"){
-        if(type == "Wind"){
+    else if(type == "Primitive"){
+        if(element == "Wind"){
             monsname = "Pterosaur";
         }
-        else if(type == "Fire"){
+        else if(element == "Fire"){
             monsname = "Spinosauras";
         }
-        else if(type == "Plant"){
+        else if(element == "Plant"){
             monsname = "Camarasaurus";
         }
-        else if(type == "Water"){
+        else if(element == "Water"){
             monsname = "Liopleurodon";
         }
         else{
@@ -81,16 +81,16 @@ monster_node::monster_node(string el,string typ){
     }
     
     else{
-        if(type == "Wind"){
+        if(element == "Wind"){
             monsname = "Byakko";
         }
-        else if(type == "Fire"){
+        else if(element == "Fire"){
             monsname = "Chimera";
         }
-        else if(type == "Plant"){
+        else if(element == "Plant"){
             monsname = "Centaur";
         }
-        else if(type == "Water"){
+        else if(element == "Water"){
             monsname = "Mah Nil Mang Korn";
         }
         else{

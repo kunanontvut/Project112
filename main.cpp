@@ -12,6 +12,7 @@ int main(){
     int mode,i,mt,me,pp1,pp2;
     string mtn,men;
     monster_node *t;
+    bool compu=false;
 
     cout<<"*** Monscard game ***"<<endl;
     cout<<"1. Player VS Player"<<endl;
@@ -28,6 +29,7 @@ int main(){
 
     if(mode ==2){
         P2.changename();
+        compu = true;
     }
 
     cout<<P1.returnname()<<" choose your 7 monster"<<endl;
@@ -107,9 +109,12 @@ int main(){
     
     clearscr();
     do{
+    if(P1.returnscore() == 3 || P2.returnscore() == 3)break;
+    if(P1.returnsize() <= 0 || P2.returnsize() <= 0)break;
     cout<<"!! Battle face !!"<<endl;
     cout<<"Turn "<<P1.returnname()<<" pick"<<endl;
     system("pause");
+
     cout<<P1.returnname()<<" 1 pick 1 monster to fight"<<endl;
     P1.show_allmonster();
     cout<<"?";
@@ -119,17 +124,23 @@ int main(){
     }while(pp1<1 || pp1>P1.returnsize());
     // sent card
     clearscr();
+
     cout<<"Turn "<<P2.returnname()<<" pick"<<endl;
     system("pause");
-     cout<<P2.returnname()<<" 1 pick 1 monster to fight"<<endl;
+    if(!compu){
+    cout<<P2.returnname()<<" 1 pick 1 monster to fight"<<endl;
     P2.show_allmonster();
     cout<<"?";
+    }
     do{
-    cin>>pp2;
+    if(compu){
+        pp2 = (rand()%P2.returnsize())+1;
+    }
+    else{cin>>pp2;}
     }while(pp2<1 || pp2>P2.returnsize());
     // sent card
     P1.winlosecal(P1,pp1-1,P2,pp2-1);
-    }while(P1.returnscore()!=3 ||P2.returnscore()!=3 || P1.returnsize() != 0);
+    }while(1);
 
 }
 
