@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include "color.h"
 
 class monster_node {
     private :
@@ -13,6 +14,7 @@ class monster_node {
         void insert_monster(monster_node*&);
         void show_monster();
         void delete_monsterin_hand(monster_node*&);
+        void changcolor(string,int=15);
 
         monster_node* movenext();
         ~monster_node();

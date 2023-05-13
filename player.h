@@ -19,4 +19,5 @@ class player{
         int returnscore(){
             return score;
         }
+        void colorc(string a,int x,int y=0);
 };

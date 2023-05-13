@@ -2,6 +2,7 @@
 #include <iostream>
 #include "monster.h"
 using namespace std;
+#include "color.h"
 
 monster_node::monster_node(string typ,string el){
     element = el;
@@ -105,8 +106,40 @@ void monster_node::insert_monster(monster_node*& x){
      x->next=this;
 }
 
+void monster_node::changcolor(string a ,int x){
+    textcolor(x,BLACK);
+    cout<<a;
+    resetcolor();
+}
+
+/*
+    w=8
+    f=12
+    p=10
+    wa=3
+    e=14
+
+    Av= 7
+    R = 2
+    P = 5
+    T = 6
+    A = 11
+*/
+
 void monster_node::show_monster(){
-    cout<<monsname<<" [ "<<type<<" ]"<<"[ "<<element<<" ]";
+    int x,y;
+    if(type == "Aves") x = 7;
+        else if(type == "Reptilia") x = 2;
+        else if(type == "Aquatic") x = 11;
+        else if(type == "Primitive") x = 5;
+        else x = 6;
+
+        if(element == "Wind") y = 8;
+        else if (element == "Fire") y = 12;
+        else if (element == "Plant") y = 10;
+        else if (element == "water") y = 3;
+        else y = 14;
+    cout<<monsname<<" [ ";changcolor(type,x); cout<<" ]"<<"[ ";changcolor(element,y);cout<<" ]";
 }
 
 monster_node* monster_node::movenext(){
