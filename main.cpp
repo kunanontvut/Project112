@@ -171,6 +171,14 @@ int main(){
     }while(pp2<1 || pp2>P2.returnsize());
     // sent card
     P1.winlosecal(P1,pp1-1,P2,pp2-1);
+    changetextcolor("===============================================================",7);
+    cout<<endl;
+    changetextcolor(P1.returnname(),9);
+    cout<< " Score -> "<< P1.returnscore() <<endl;
+    changetextcolor(P2.returnname(),12);
+    cout<< " Score -> "<< P2.returnscore() <<endl;
+    changetextcolor("===============================================================",7);
+    cout<<endl;
     }while(1);
 
 }
@@ -218,7 +226,7 @@ void selectmonster(){
 }
 
 void clearscr(){
-    for(int i=0;i<20;i++)
+    for(int i=0;i<35;i++)
         cout<<endl;
 }
 

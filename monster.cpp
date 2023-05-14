@@ -99,7 +99,7 @@ monster_node::monster_node(string typ,string el){
         }
     }
 
-    cout<<"Momster "<<monsname<<"add in your hand.."<<endl;
+    cout<<"Momster "<<monsname<<" add in your hand.."<<endl;
 }
 
 void monster_node::insert_monster(monster_node*& x){
