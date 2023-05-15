@@ -54,8 +54,8 @@ void LL::dropcard(int n){
     
 }
 
-void LL::changecolorll(string a,int x,int y){
-    textcolor(x,y);
+void LL::changecolor(string a,int x){
+    textcolor(x,0);
     cout<<a;
     resetcolor();
 }
@@ -84,32 +84,32 @@ void LL::winlosecal(LL& p1,int P1P,LL& p2,int P2P){
         else{
             if(t1->returnele() == "Wind" && t2->returnele() == "Fire" || t1->returnele() == "Wind" && t2->returnele() == "Plant"){
                 t1->show_monster();
-                cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+                cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
                 p1.incread_score();
             }
             else if(t1->returnele() == "Fire" && t2->returnele() == "Plant" || t1->returnele() == "Fire" && t2->returnele() == "Water"){
                 t1->show_monster();
-                cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+                cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
                 p1.incread_score();
             }
             else if(t1->returnele() == "Plant" && t2->returnele() == "Water" || t1->returnele() == "Plant" && t2->returnele() == "Earth"){
                 t1->show_monster();
-                cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+                cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
                 p1.incread_score();
             }
             else if(t1->returnele() == "Water" && t2->returnele() == "Earth" || t1->returnele() == "Water" && t2->returnele() == "Wind"){
                 t1->show_monster();
-                cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+                cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
                 p1.incread_score();
             }
             else if(t1->returnele() == "Earth" && t2->returnele() == "Wind" || t1->returnele() == "Earth" && t2->returnele() == "Fire"){
                 t1->show_monster();
-                cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+                cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
                 p1.incread_score();
             }
             else{
                 t2->show_monster();
-                cout<<" Win !! ";changecolorll(returnname(),12);cout<< " Score +1"<<endl;
+                cout<<" Win !! ";changecolor(returnname(),12);cout<< " Score +1"<<endl;
                 p2.incread_score();
             }
 
@@ -121,57 +121,57 @@ void LL::winlosecal(LL& p1,int P1P,LL& p2,int P2P){
 
         if(t1->returntype() == "Aves" && t2->returntype() == "Reptilia"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if( t1->returntype() == "Avest" && t2->returntype() == "Aquatic"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Reptilia" && t2->returntype() == "Aquatic"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Reptilia" && t2->returntype() == "Primitive"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Aquatic" && t2->returntype() == "Primitive"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Aquatic" && t2->returntype() == "Terrestail"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Primitive" && t2->returntype() == "Terrestail"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Reptilia" && t2->returntype() == "Aves"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Terrestail" && t2->returntype() == "Aves"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else if(t1->returntype() == "Terrestail" && t2->returntype() == "Reptilia"){
             t1->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),9);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),9);cout<< " Score +1"<<endl;
             p1.incread_score();
         }
         else {
             t2->show_monster();
-            cout<<" Win !! ";changecolorll(returnname(),12);cout<< " Score +1"<<endl;
+            cout<<" Win !! ";changecolor(returnname(),12);cout<< " Score +1"<<endl;
             p2.incread_score();
         }
 

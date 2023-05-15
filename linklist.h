@@ -10,7 +10,7 @@ public:
        void show_allmonster();
        void dropcard(int);
        void winlosecal(LL&,int,LL&,int);
-       void changecolorll(string , int ,int = 0);
+       void changecolor(string , int );
        int returnsize(){ return size;}
        
        ~LL();
